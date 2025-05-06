@@ -1,0 +1,57 @@
+
+body{
+    background: url('endless-space-ii-wallpaper-2048x1152_49.jpg');
+}
+#TopPart{
+    /* padding-top: 25%; */
+    padding-top: 10%;
+    position: relative;
+    z-index: 555001 !important;
+}
+.StaticTop{
+    color: blue !important;
+    transition-delay: 1s;
+    transition-duration: 3s;
+}
+.MovingTop{
+    /* padding-top: 5% !important; */
+    margin-top: -10% !important;
+    padding-top: 0% !important;
+    transition-delay: 1s;
+    transition-duration: 3s;
+    color: green !important;
+}
+
+#BottomPart{
+    margin-top: 0%; 
+    padding-bottom: 25%;
+    position: relative;
+    z-index: 555001 !important;
+}
+.StaticBottom{
+    color: blue !important;
+    transition-delay: 1s;
+    transition-duration: 3s;
+}
+.MovingBottom{
+    /* margin-top: 38% !important;  */
+    margin-top: 41% !important; 
+    transition-delay: 1s;
+    transition-duration: 3s;
+    color: green !important;
+}
+
+    .MoveTop{
+        animation-name: MovingTop;
+        animation-duration: 10s;
+        animation: normal;
+        animation-fill-mode: forwards; /* ===================== */
+        position: absolute;
+        border: 2px solid green !important;
+    }
+    @keyframes MovingTop {
+        0% {padding: 25%;}
+        50% {padding: 12.5%;}
+        100% {padding: 0%;}
+    }
+/* Animation block End */
