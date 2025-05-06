@@ -1,0 +1,96 @@
+#ShipItemContainer{
+    transition-delay: 1s;
+    transition-duration: 3s;
+}
+#ShipItemImg{
+    transition-delay: 1s;
+    transition-duration: 3s;
+}
+.MovingShipHorisontal{
+    animation-name: MovingShipItem_RunningMove;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    position: absolute !important;
+    /* left: 37.5%; /*middle point OX desktop */
+    box-shadow: 0 0px 4px 6px rgba(205, 255, 113, 0.4), 0 0px 12px 14px rgba(255, 255, 255, 0.4) !important;
+
+}
+@keyframes MovingShipItem_RunningMove {
+    0%{left: 37.5%;         right: 0;       top: 100%;} /*middle point OX desktop */
+    35%{left: 37%;   right: 0;         top: 100%;} /*-0.5%*/
+    50%{left: 37.5%;   right: 0;         top: 100%;} /*middle point OX desktop */
+    75%{left: 38%;        right: 0;      top: 100%;} /*+0.5%*/
+    100%{left: 37.5%;       right: 0;       top: 100%;} /*middle point OX desktop */
+}
+
+.StartMovingShip{
+    animation-name: MovingShipItem_StartMove;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    position: absolute !important;
+}
+@keyframes MovingShipItem_StartMove {
+    0%{bottom: 0px;}
+    35%{bottom: 25px;}
+    /* 50%{bottom: 0px;} */
+    /* 75%{bottom: -25px;} */
+    100%{bottom: 0px;}
+    /* 0%{top: 0;}
+    35%{top: 25px;}
+    75%{top: 50px;}
+    100%{top: 0px;} */
+}
+
+
+/*for JS events onmousedoun, onmouseup*/
+/* .staticPosition{
+    position: static !important;
+} */
+
+.MoveShipItemToMiddle{
+    /* animation-name: MovingShipItem_MoveToMiddle; */
+    transition-delay: 1s;
+    transition-duration: 3s;
+    position: static;
+    /* animation-fill-mode: forwards; */
+}
+.MoveShipItemLeft{
+    animation-name: MovingShipItem_LeftMove;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    position: absolute !important;
+}
+.MoveShipItemRight{
+    animation-name: MovingShipItem_RightMove;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    position: absolute !important;
+}
+/* @keyframes MovingShipItem_MoveToMiddle {
+    0%{left: 0; right: 0;}
+    100%{left: 0px; right: 0px;}
+} */
+
+@keyframes MovingShipItem_LeftMove {
+    0%{left: 0px;}
+    /* 35%{left: -50px;} */
+    /* 100%{left: -200px;} */
+    100%{left: -37%;}
+}
+@keyframes MovingShipItem_RightMove {
+    0%{right: 0px;}
+    /* 35%{right: -50px;} */
+    /* 100%{right: -200px;} */
+    100%{right: -37%;}
+}
+
+/*for JS events onmousedoun, onmouseup /end*/
+
+.greenShadowBorder{
+    box-shadow: 0 0px 4px 6px rgba(205, 255, 113, 0.4), 0 0px 12px 14px rgba(255, 255, 255, 0.4) !important;
+    border: 1px solid white !important;
+  }
+.redShadowBorder{
+    box-shadow: 0 0px 4px 6px rgba(255, 0, 0, 0.4), 0 0px 12px 14px rgba(255, 255, 255, 0.4) !important;
+    border: 1px solid rgb(255, 0, 0) !important;
+  }
