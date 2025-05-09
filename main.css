@@ -7,6 +7,11 @@ body{
     padding-top: 10%;
     position: relative;
     z-index: 555001 !important;
+    /* background: darkslategray !important; */
+    outline: 5px solid rgb(75, 58, 58);
+    outline-offset: -60px;
+    outline-style: inset;
+    outline-width: 50px;
 }
 .StaticTop{
     color: blue !important;
@@ -15,11 +20,12 @@ body{
 }
 .MovingTop{
     /* padding-top: 5% !important; */
-    margin-top: -10% !important;
+    margin-top: -12% !important;
     padding-top: 0% !important;
     transition-delay: 1s;
     transition-duration: 3s;
     color: green !important;
+    /* opacity: 0; */
 }
 
 #BottomPart{
@@ -27,6 +33,11 @@ body{
     padding-bottom: 25%;
     position: relative;
     z-index: 555001 !important;
+        /* background: darkslategray !important; */
+        outline: 5px solid rgb(75, 58, 58);
+        outline-offset: -60px;
+        outline-style: inset;
+        outline-width: 50px;
 }
 .StaticBottom{
     color: blue !important;
@@ -35,10 +46,11 @@ body{
 }
 .MovingBottom{
     /* margin-top: 38% !important;  */
-    margin-top: 41% !important; 
+    margin-top: 39.5% !important; 
     transition-delay: 1s;
     transition-duration: 3s;
     color: green !important;
+    /* opacity: 0; */
 }
 
     .MoveTop{

@@ -1,10 +1,11 @@
 #ShipItemContainer{
-    transition-delay: 1s;
-    transition-duration: 3s;
+    transition-delay: 0s;
+    /* transition-duration: 3s; */
 }
 #ShipItemImg{
-    transition-delay: 1s;
+    /* transition-delay: 1s; */
     transition-duration: 3s;
+    border-left: 0;
 }
 .MovingShipHorisontal{
     animation-name: MovingShipItem_RunningMove;

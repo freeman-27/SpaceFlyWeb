@@ -1,0 +1,22 @@
+.FallingStones{
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    /* animation-name: MovingDown; */
+    animation: MovingDown;
+    animation-duration: 15s;
+    position: absolute;
+    top:500px;
+    /* z-index: -2; */
+}
+
+@keyframes MovingDown {
+      /* 0%{top: 100px;}
+     25%{top: 400px;}
+     50%{top: 700px;}
+    100%{top: 1000px;} */
+    from{top: -100px; transform: rotate(-720deg);}
+    to{top: 1000px; transform: rotate(360deg);}
+}
+
+.rotatedStones{
+    transform: rotate(360deg);
+}

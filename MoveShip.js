@@ -5,6 +5,10 @@ let xL_return;
 let keyBtnID;
 let retKey;
 
+//limits:
+let xL_Lim;
+let xR_Lim;
+
 function MovingFunction(event){
     switch (event.keyCode) {
       case 37:
@@ -60,42 +64,63 @@ let decrLeft = 1;  //(+left)
 function HorisontalMove(){
     let setX_left;
     let OutputLog;
-
+    ////Mooving Left
     if (keyBtnID === 37){ // incrLeft (-Left)
         F_incrLeft();
         SetLeft_incr();
+        function F_incrLeft(){
+            xL_Lim = -475;
+            incrLeft -=10; 
+            ObjShip.firstChild.style.add = 'transition-duration: 2s';
+            ObjShip.firstChild.style.borderLeft = 'none';
+            ObjShip.firstChild.style.borderRight = 'none';
+            if (incrLeft < xL_Lim){
+                incrLeft = xL_Lim;
+                // ObjShip.firstChild.style.add = 'transition-delay: 3s';
+                ObjShip.firstChild.style.add = 'transition-duration: 2s';
+                ObjShip.firstChild.style.borderLeft = '5px solid red';
+                ObjShip.firstChild.style.borderRadius = '25px';
+            }
+        }
         function SetLeft_incr(){
             setX_left = incrLeft + 'px';
             ObjShip.style.position = 'absolute';
             ObjShip.style.left = setX_left;
         }
-        function F_incrLeft(){
-            incrLeft -=1; 
-        }
         OutputLog = setX_left;
         console.log(OutputLog);
     } 
-    if (keyBtnID === 39){ //decrLeft (+Left)
-        F_decrLeft();
-        SetLeft_decr();
-        function SetLeft_decr(){
-            setX_left = decrLeft + 'px';
+
+    ////Mooving Right
+    if (keyBtnID === 39){ //incrRight (-Right)
+        F_incrLeft();
+        SetLeft_incr();
+        function F_incrLeft(){
+            xR_Lim = -475;
+            incrLeft +=10; 
+            ObjShip.firstChild.style.add = 'transition-duration: 2s';
+            ObjShip.firstChild.style.borderLeft = 'none';
+            ObjShip.firstChild.style.borderRight = 'none';
+            if (incrLeft > xR_Lim*(-1)){
+                incrLeft = xR_Lim*(-1);
+                // ObjShip.firstChild.style.add = 'transition-delay: 3s';
+                ObjShip.firstChild.style.add = 'transition-duration: 2s';
+                ObjShip.firstChild.style.borderRight = '5px solid red';
+                ObjShip.firstChild.style.borderRadius = '25px';
+            }
+        }
+        function SetLeft_incr(){
+            setX_left = incrLeft + 'px';
             ObjShip.style.position = 'absolute';
             ObjShip.style.left = setX_left;
         }
-        function F_decrLeft(){
-            decrLeft +=1; 
-        }
+
         OutputLog = setX_left;
         console.log(OutputLog);
     }
-    //incrRight (-Right)
-    // if (keyBtnID === 39){
+        // if (keyBtnID === 37){ //decrRight (+Right)
 
-    // }
-    // if (keyBtnID === 37){ //decrRight (+Right)
-
-    // }
+        // }
 }
 
 
