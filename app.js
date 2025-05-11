@@ -16,6 +16,7 @@ let CallInt = setInterval (function CallAddMeteor( ){AddMeteor();}, 1000);
 function StartApp(){
     if(AppStopped === false){
         OpenDoor();
+        // DisplayShipOnStart();
         
         // CallAddMeteor();
     }    
@@ -25,6 +26,7 @@ function StartApp(){
             clearInterval(CallInt);
         }
         CloseDoor();
+        DisplayRedLights();
         AppStopped = false;
     }return AppStopped;
 }

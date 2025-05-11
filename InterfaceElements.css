@@ -1,0 +1,5 @@
+#DisableTopItemsGroup,
+#MiddleItemsGroup,
+#BottomItemsGroup{
+    border-style: none !important; /*check*/
+}
