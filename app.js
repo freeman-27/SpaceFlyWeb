@@ -12,7 +12,7 @@ function StopApp(){
 }
 
 
-let CallInt = setInterval (function CallAddMeteor( ){AddMeteor();}, 1000);
+let CallInt = setInterval (function CallAddMeteor( ){AddMeteor(); AddStars();}, 1000);
 function StartApp(){
     if(AppStopped === false){
         OpenDoor();

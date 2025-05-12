@@ -20,14 +20,20 @@ class SpaceObj{
   let newID = 1;
   let RandomX;
   let RandomY;
+
+
+///Creating Static Items "Stones"
+///adding new img elements to Dom and adding CSS classes with animation to new items (function does not remove items form dom: TODO removing)
+///function AddMeteor()
   // setInterval(
     function AddMeteor(){
+      newID = 'Stone_T1';
       let Meteor_Type1 = new SpaceObj;
       Meteor_Type1.ImgSource = "img/RockTexture1.PNG";
       Meteor_Type1.DomElementType = 'image';
       Meteor_Type1.DomElement = document.createElement('img');
-      Meteor_Type1.DefWidth = '40px';
-      Meteor_Type1.DefHeight = '40px';
+      Meteor_Type1.DefWidth = '15px';  //40px default
+      Meteor_Type1.DefHeight = '15px'; //40px default
       // Meteor_Type1.PosX = Math.Radom;
 
       ///set atributes to element:
@@ -44,17 +50,52 @@ class SpaceObj{
       Meteor_Type1.DomElement.setAttribute("style", "z-index: 777005 !important;");
       // Meteor_Type1.PosX = Math.Radom;
       RandomCoordinates();
-      Meteor_Type1.DomElement.setAttribute("style", "position: absolute; left:"+ RandomX + "px; top: 100px; border: 2px solid red !important;")
+      Meteor_Type1.DomElement.setAttribute("style", "position: absolute; left:"+ RandomX + "px; top: 100px; border: 0px solid red !important;")
 
       document.getElementById("MiddleItemsGroup").appendChild(Meteor_Type1.DomElement);
 
-      newID++;
+      // newID++;
     }
   // , 1000);
 
+
+  ///
+  ///
+  ///
   function RandomCoordinates(){
     RandomX = Math.floor(Math.random() * 1200) + 10; //X from 10 to 50
     RandomY = Math.floor(Math.random() * 200) + 1; //Y from 1 to 20
-    console.log("X:", RandomX, "Y:", RandomY)
+    // console.log("X:", RandomX, "Y:", RandomY); //check
     return RandomX, RandomY;
+  }
+
+
+  function AddStars(){
+    newID = 'Star_T1';
+    let Stars_Type1 = new SpaceObj;
+    Stars_Type1.ImgSource = "img/StarType2.svg";
+    Stars_Type1.DomElementType = 'image';
+    Stars_Type1.DomElement = document.createElement('img');
+    Stars_Type1.DefWidth = '30px';  //40px default
+    Stars_Type1.DefHeight = '30px'; //40px default
+
+    ///set atributes to element:
+    Stars_Type1.DomElement.setAttribute("width", Stars_Type1.DefWidth );
+    Stars_Type1.DomElement.setAttribute("height", Stars_Type1.DefHeight);
+    Stars_Type1.DomElement.setAttribute("id", newID);
+    Stars_Type1.CssClassesList = "rounded-circle border border-2 border-light ShiningFallingStars Dis-Shining Dis-FallingStars"; 
+    Stars_Type1.DomElement.setAttribute("src", Stars_Type1.ImgSource);
+    Stars_Type1.DomElement.setAttribute("style", "position: absolute");
+    Stars_Type1.DomElement.setAttribute("class", Stars_Type1.CssClassesList);
+
+    Stars_Type1.DomElement.setAttribute("class", Stars_Type1.CssClassesList);
+    //custom:
+    Stars_Type1.DomElement.setAttribute("style", "z-index: 777005 !important;");
+
+    RandomCoordinates();
+    Stars_Type1.DomElement.setAttribute("style", "position: absolute; left:"+ RandomX + "px; top: 100px; border: 0px solid red !important;")
+
+    document.getElementById("MiddleItemsGroup").appendChild(Stars_Type1.DomElement);
+
+    // newID++;
   }

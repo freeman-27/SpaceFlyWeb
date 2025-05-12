@@ -1,7 +1,29 @@
 
 body{
-    background: url('endless-space-ii-wallpaper-2048x1152_49.jpg');
+    /* background: url('endless-space-ii-wallpaper-2048x1152_49.jpg'); */
+    /* background: url('img/SpaceBackgroundType1_opacity150.png'); */
+    background-size: 25%; 
+    /* background-repeat: no-repeat; */
+
+    background-color: rgba(2, 0, 66, 0.445);
+    background-image: url('img/BigTextureStars_opacity200.png');
+
+    /* background-blend-mode: hard-light; */
+    /* background-blend-mode: color-dodge, multiply; */
+    /* background-blend-mode: difference; */
+    /* background-blend-mode: color; */
+    background-blend-mode: color-dodge;
+    /* background-blend-mode: hard-light; */
+
+    /* mix-blend-mode: color-burn; */
+    /* -webkit-backdrop-filter: hue-rotate(45deg); */
+    /* -webkit-backdrop-filter: drop-shadow(10px 10px 7px lightblue); */
+    /* backdrop-filter: hue-rotate(45deg); */
+    /* backdrop-filter: drop-shadow(10px 10px 7px lightblue); */
+    /* position: absolute; */
 }
+
+/* Animation block ////////////////////*/
 #TopPart{
     /* padding-top: 25%; */
     padding-top: 10%;
@@ -66,4 +88,39 @@ body{
         50% {padding: 12.5%;}
         100% {padding: 0%;}
     }
+.PlanetBackground{
+    transition-delay: 1s;
+    transition-duration: 3s;
+    border-color: yellow !important;
+}
+    .PlanetBackgroundMove{
+        animation: PlanetBackgroundMoving;
+        animation-delay: 5s;
+        animation-duration: 10s;
+        position: absolute;
+        border: 2px solid green !important;
+    }
+    @keyframes PlanetBackgroundMoving {
+        from {top: 30%;}
+        /* 50% {top: 85%;} */
+        to {top: 200%;}
+    }
 /* Animation block End */
+
+.CyanShadowBorder{
+    box-shadow: 0 0px 25px 50px rgb(136, 190, 186), 0 0px 100px 200px rgba(255, 255, 255, 0.4) !important;
+    border: 1px solid white !important;
+    transition-duration: 12s;
+  }
+.YellowShadowBorder{
+    box-shadow: 0 0px 25px 50px rgba(252, 255, 84, 1), 0 0px 100px 200px rgba(255, 255, 255, 0.4) !important;
+    border: 1px solid white !important;
+  }
+.RedShadowBorder{
+    box-shadow: 0 0px 25px 50px rgb(255, 84, 84), 0 0px 100px 200px rgba(255, 255, 255, 0.4) !important;
+    border: 1px solid white !important;
+  }
+.RedShadowDefault{
+    box-shadow: 0 0px 5px 10px rgba(255, 84, 84, 0.4), 0 0px 15px 30px rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgb(0, 0, 0) !important;
+  }

@@ -4,7 +4,7 @@ document.getElementById("SoundOfDoorOnSpaseShip").volume = 0.01;
 document.getElementById("SirenOpeningDoor").volume = 0.03;
 document.getElementById("SirenClosingDoor").volume = 0.0025;
 SoundForBackgroundFlying.volume = 0.005;
-document.getElementById('MainSoundBackground').volume = 2;
+document.getElementById('MainSoundBackground').volume = 1; //100%
 
 function OpenDoor(){
     document.getElementById("RingOpeningDoor").play();
@@ -17,6 +17,7 @@ function OpenDoor(){
         document.getElementById("CloseAppButton").classList.remove("d-none");
         document.getElementById("TestBTN").classList.remove("d-none");
         document.getElementById("StartAppButton").classList.add("d-none");
+        document.getElementById("PlanetItemBackgound").classList.add("PlanetBackgroundMove", "RedShadowBorder");
         document.getElementById("SoundOfDoorOnSpaseShip").play();
         // document.getElementById("AlarmOpeningDoor").play();
         
@@ -31,6 +32,9 @@ function OpenDoor(){
     
         // document.getElementById("topPart").classList.add("MoveTop");
         }, 2000);
+
+    setTimeout(function HidePalnetItem(){document.getElementById("PlanetItemBackgound").classList.add('d-none')}, 10000)
+
 }, 2000);
 }
 function CloseDoor(){
