@@ -1,0 +1,21 @@
+@media screen and (min-width: 100px) and (max-width: 800px) {
+    /* ----------------------------------------------------------- */
+    /*Rotation Device  Check*/
+    #warning-message{ 
+        display: none; 
+      }
+      @media only screen and (orientation:portrait){
+          #wrapper { 
+            display:none; 
+          }
+          #warning-message { 
+            display:block; 
+          }
+      }
+      @media only screen and (orientation:landscape){
+        #warning-message{
+          display:none; 
+        }
+      }
+    /* ----------------------------------------------------------- */
+}
