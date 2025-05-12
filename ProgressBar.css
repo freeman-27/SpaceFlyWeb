@@ -1,0 +1,12 @@
+/* <style> */
+#ProgressBarContainer {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#progressBar_1 {
+  width: 1%;
+  height: 10px;
+  background-color: #3604aa;
+}
+/* </style> */
