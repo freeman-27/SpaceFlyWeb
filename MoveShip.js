@@ -4,11 +4,12 @@ let xVar = 1; //for left and right functions
 let xL_return;
 let keyBtnID;
 let retKey;
+ObjShip.setAttribute("path-number", "0");
 
 //limits:
 let xL_Lim;
 let xR_Lim;
-
+// let RihgtControl = 39; //test
 function MovingFunction(event){
     switch (event.keyCode) {
       case 37:
@@ -43,6 +44,12 @@ function MovingFunction(event){
         //  alert('Esc key');
          CloseDoor();
       break;
+      //mobile controllers: //test
+        // case RihgtControl:
+        //     retKey = 39;
+        //     GetKeyBtnID();
+        //     HorisontalMove();
+        // break;
    }
   };
 
@@ -60,7 +67,8 @@ let decrLeft = 1;  //(+left)
 
 // let incrRight; //(-right)
 // let decrRight; //(+right)
-
+let PathNumber; //from 1 to 13 (13 Id-numbers). middle id path = 0; 
+PathNumber = 0;
 function HorisontalMove(){
     let setX_left;
     let OutputLog;
@@ -71,13 +79,15 @@ function HorisontalMove(){
         function F_incrLeft(){
             xL_Lim = -475;
             incrLeft -=10; 
-            ObjShip.firstChild.style.add = 'transition-duration: 2s';
-            ObjShip.firstChild.style.borderLeft = 'none';
-            ObjShip.firstChild.style.borderRight = 'none';
+            PathNumber -= 10;
+            // ObjShip.firstChild.style.add = 'transition-duration: 0s';
+            ObjShip.firstChild.style.borderLeft = '0px solid red';
+            ObjShip.firstChild.style.borderRight = '0px solid red';
+            // ObjShip.firstChild.style.borderLeft = 'none';
+            // ObjShip.firstChild.style.borderRight = 'none';
             if (incrLeft < xL_Lim){
                 incrLeft = xL_Lim;
-                // ObjShip.firstChild.style.add = 'transition-delay: 3s';
-                ObjShip.firstChild.style.add = 'transition-duration: 2s';
+                // ObjShip.firstChild.style.add = 'transition-duration: 0.25s';
                 ObjShip.firstChild.style.borderLeft = '5px solid red';
                 ObjShip.firstChild.style.borderRadius = '25px';
             }
@@ -86,9 +96,13 @@ function HorisontalMove(){
             setX_left = incrLeft + 'px';
             ObjShip.style.position = 'absolute';
             ObjShip.style.left = setX_left;
+            ObjShip.setAttribute("attr_x", setX_left);
+            ObjShip.setAttribute("path-number", PathNumber);
         }
         OutputLog = setX_left;
-        console.log(OutputLog);
+        // console.log(OutputLog);
+        console.log("Path №:"+ PathNumber);
+
     } 
 
     ////Mooving Right
@@ -98,13 +112,14 @@ function HorisontalMove(){
         function F_incrLeft(){
             xR_Lim = -475;
             incrLeft +=10; 
-            ObjShip.firstChild.style.add = 'transition-duration: 2s';
-            ObjShip.firstChild.style.borderLeft = 'none';
-            ObjShip.firstChild.style.borderRight = 'none';
+            PathNumber += 10;
+            // PathNumber = PathNumber * 10;
+            // ObjShip.firstChild.style.add = 'transition-duration: 0s';
+            ObjShip.firstChild.style.borderLeft = '0px solid red';
+            ObjShip.firstChild.style.borderRight = '0px solid red';
             if (incrLeft > xR_Lim*(-1)){
                 incrLeft = xR_Lim*(-1);
-                // ObjShip.firstChild.style.add = 'transition-delay: 3s';
-                ObjShip.firstChild.style.add = 'transition-duration: 2s';
+                // ObjShip.firstChild.style.add = 'transition-duration: 0.25s';
                 ObjShip.firstChild.style.borderRight = '5px solid red';
                 ObjShip.firstChild.style.borderRadius = '25px';
             }
@@ -113,10 +128,13 @@ function HorisontalMove(){
             setX_left = incrLeft + 'px';
             ObjShip.style.position = 'absolute';
             ObjShip.style.left = setX_left;
+            ObjShip.setAttribute("attr_x", setX_left);
+            ObjShip.setAttribute("path-number", PathNumber);
         }
 
         OutputLog = setX_left;
-        console.log(OutputLog);
+        // console.log(OutputLog);
+        console.log("Path №:"+ PathNumber);
     }
         // if (keyBtnID === 37){ //decrRight (+Right)
 

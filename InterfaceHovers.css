@@ -1,0 +1,9 @@
+#LeftController :hover{
+    box-shadow: 0 0px 5px 10px rgba(255, 84, 84, 0.4), 0 0px 15px 30px rgba(255, 255, 255, 0.1) !important;
+    border: 10px solid black !important;
+    cursor: pointer;
+}
+#LeftController{
+    box-shadow: 0 0px 5px 10px rgba(255, 84, 84, 0.4), 0 0px 15px 30px rgba(255, 255, 255, 0.1) !important;
+
+}

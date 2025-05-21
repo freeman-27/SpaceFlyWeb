@@ -2,7 +2,7 @@
     /* animation: name duration timing-function delay iteration-count direction fill-mode; */
     /* animation-name: MovingDown; */
     animation: StonesMovingDown;
-    animation-duration: 15s;
+    animation-duration: 3s;
     position: absolute;
     top:500px;
     /* z-index: -2; */
@@ -13,13 +13,39 @@
      25%{top: 400px;}
      50%{top: 700px;}
     100%{top: 1000px;} */
+    from{top: -100px; /*transform: rotate(-720deg)*/;}
+    to{top: 1000px; /*transform: rotate(360deg)*/;}
+}
+.FallingRotatingStones{
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    /* animation-name: MovingDown; */
+    animation: RotatingStonesMovingDown;
+    animation-duration: 15s;
+    position: absolute;
+    top:500px;
+    /* z-index: -2; */
+}
+
+@keyframes RotatingStonesMovingDown {
+      /* 0%{top: 100px;}
+     25%{top: 400px;}
+     50%{top: 700px;}
+    100%{top: 1000px;} */
     from{top: -100px; transform: rotate(-720deg);}
     to{top: 1000px; transform: rotate(360deg);}
 }
 
-.rotatedStones{
-    transform: rotate(360deg);
+.RotatedStones{
+    animation: RotatingStones;
+    animation-duration: 15s;
+    position: absolute;
+    top:500px;
 }
+@keyframes RotatingStones{
+  from{transform: rotate(-720deg);}
+  to{transform: rotate(360deg);}
+}
+
 
 /*Falling Stars //////////////////// */
 .FallingStars{
@@ -71,4 +97,19 @@
     75%{top: 630px; transform: scale(1.0);}
     88%{top: 810px; transform: scale(1.25);}
     100%{top: 1000px; transform: scale(1.0);}
+}
+
+
+
+/**** FalingMeteors Classes for game process*/
+.FallingStonesPreset{
+block-size: 100px; 
+width:100px; 
+position: absolute; 
+border: 2px solid blue !important; z-index: 999005 !important; 
+background: url("img/RockTexture1.PNG"); background-size: cover;
+/* z-index: 999005 !important; */
+/* left:" + RandomForX + "px; */    /***value from script*/
+/* top:" + incrY + "px; */          /***value from script*/
+
 }

@@ -42,7 +42,8 @@ body{
 }
 .MovingTop{
     /* padding-top: 5% !important; */
-    margin-top: -12% !important;
+    /* margin-top: -12% !important; */
+    margin-top: -17% !important;
     padding-top: 0% !important;
     transition-delay: 1s;
     transition-duration: 3s;
@@ -68,7 +69,8 @@ body{
 }
 .MovingBottom{
     /* margin-top: 38% !important;  */
-    margin-top: 39.5% !important; 
+    /* margin-top: 39.5% !important;  */
+    margin-top: 54% !important; 
     transition-delay: 1s;
     transition-duration: 3s;
     color: green !important;
@@ -105,6 +107,97 @@ body{
         /* 50% {top: 85%;} */
         to {top: 200%;}
     }
+
+    .GameStatusTextDefault{
+        transition-duration: 1.25s;
+        /* transition-delay: 2s; */
+
+        /* transform: scale(1);
+        opacity: 0; */
+    }
+    .WaitingAnimation{
+        animation: ShiningText;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        /* timing-function: ; */
+        text-shadow: 2px 2px #000000;
+
+    }
+    @keyframes ShiningText{
+        0% {color: white;}
+        /* 20% { transform: scale(1); color: yellowgreen;} */
+        /* 45% {transform: scale(1.0); color: white;} */
+
+        /* 50% { transform: scale(1); color: rgb(205, 107, 50);} */
+        50% {color: rgb(96, 139, 231);}
+        /* 80% { transform: scale(1); color: yellowgreen;} */
+
+        /* 75% { transform: scale(1); color: yellowgreen;} */
+        /* 100% { transform: scale(1); color: yellowgreen;} */
+
+        100% {color: white;}
+        /* 0% {transform: scale(1.0); opacity: 0.5;}
+        50% { transform: scale(1.015); opacity: 1;}
+        100% { transform: scale(1.0); opacity: 0.5} */
+    }
+    .ReColorText{
+        color: #a3ff4d;
+        text-shadow: 2px 2px #000000;
+    }
+    .ScalableText{
+        transition-duration: 0.5s;
+        transform: scale(15.0) !important;
+        opacity: 0;
+    }
+
+    #ContainerForButtonsOfPanel{
+        border: 5px solid red !important;
+        background-color: aqua;
+        /* width: 50% !important; */
+        /* left: 25% !important; */
+        perspective: 1000px !important; 
+    }
+    #BottomItemsGroup button{
+        color: #a3ff4d !important;
+    }
+    #PreloadButtonsPanel{
+        display: none;
+        /* transition-duration: 3s; */
+        /* width: 0; */
+        /* block-size: 0; */
+        width: 100%;
+        block-size: 200px;
+        /* block-size: 200px !important; */
+        /* width: 100% !important; */
+        z-index: 44405 !important;
+
+        opacity: 0;
+    }
+    .PreloadButtonsPanelAnimation{
+        /* block-size: 200px !important; */
+        /* width: 100% !important; */
+        /* left: 15% !important; */
+        display: block !important;
+        animation-name: IncrWidth;
+        animation-duration: 3s;
+        z-index: 44405;
+    }
+    @keyframes IncrWidth {
+        0%{left: 49.5%; width: 5px; block-size: 0;}
+        25%{left: 49.5%; width: 5px; block-size: 100px;}
+        60%{left: 0%; width: 100%; block-size: 100px; opacity: 1; box-shadow: none;}
+        70%{left: 0%; width: 100%; block-size: 100px; opacity: 1; box-shadow: 0 0px 5px 10px rgb(136, 190, 186), 0 0px 10px 20px rgba(255, 255, 255, 0.4);}
+        100%{left: 0%; width: 100%; block-size: 100px; opacity: 0; box-shadow: none;}
+    }
+
+    .DisplayBtnPanel{
+        transition-duration: 1s;
+        display: block;
+    }
+    .HideBtnPanel{
+        transition-duration: 1s;
+        display: none !important;
+    }
 /* Animation block End */
 
 .CyanShadowBorder{
@@ -119,8 +212,24 @@ body{
 .RedShadowBorder{
     box-shadow: 0 0px 25px 50px rgb(255, 84, 84), 0 0px 100px 200px rgba(255, 255, 255, 0.4) !important;
     border: 1px solid white !important;
+    transition-delay: 3s;
   }
 .RedShadowDefault{
     box-shadow: 0 0px 5px 10px rgba(255, 84, 84, 0.4), 0 0px 15px 30px rgba(255, 255, 255, 0.1) !important;
     border: 1px solid rgb(0, 0, 0) !important;
-  }
+}
+
+button:hover, .HoverButton:hover{
+    color: #a3ff4d !important;
+    background-color: black !important;
+    border-color: white !important;
+}
+
+
+.VerticalLineBoxes {/****** for falling elements paths */
+    border: 0px dashed red;
+    block-size: 800px;
+    width: 100px !important;
+    top: -200px !important;
+    position: relative;
+}

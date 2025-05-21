@@ -1,0 +1,93 @@
+@media screen and (min-width: 100px) and (max-width: 1000px){
+    /* AnimationBlock ///////////////////////////////////////////////////////// */
+
+    .LeftWallMooveLeft{
+        transition-duration: 3s;
+        width: 0 !important;
+    }
+    .RightWallMooveRight{
+        transition-duration: 3s;
+        width: 0 !important;
+    }
+
+    .MovingTop{
+        margin-top: -18% !important
+    }
+
+    /* AnimationBlock End ///////////////////////////////////////////////////////// */
+    #TopPart{
+        block-size: 180px;
+        outline-offset: -30px;
+        outline-style: inset;
+        outline-width: 20px;
+        padding: 0;
+    }
+    #BottomPart{
+        block-size: 100px;
+        outline-offset: -30px;
+        outline-style: inset;
+        outline-width: 20px;
+    }
+    #TopPart :nth-child(2){ /*colored header*/
+        top: 25px !important;
+        position: relative;
+        font-size: 30px !important;
+        padding: 0;
+        margin: 0;
+    }
+    #BottomPart :nth-child(2){ /*colored header*/
+        top: -25px !important;
+        position: relative;
+        font-size: 30px !important;
+        padding: 0;
+        margin: 0;
+    }
+    /* #WallsContainer{
+        display: inline-flex;
+        block-size: 100%;
+    } */
+    #TopPart :nth-child(1), #BottomPart :nth-child(1){
+        /* color: green; */
+    }
+
+
+    .WarningBorderBottom img{
+        height: 10px;
+        z-index: 888005;
+    }
+    
+    #ShipItemContainer img{
+        width: 100px !important;
+        /* position: absolute; */
+    }
+    #ShipItemContainer{
+        /* width: 50px !important; */
+        bottom: -250px !important;
+    }
+    #ShipItemContainer :nth-child(3){
+    width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 30px solid #ff8522;
+    /* border-color: red; */
+
+    }
+    #TopItemsGroup{
+        top: 30px !important;
+        width: 100% !important;
+        left: 0 !important;
+    }
+    #BottomItemsGroup{
+        display: none;
+    }
+
+
+    /* #RedLightContainer01{
+        border: 2px solid red;
+        left: 20%;
+        position: absolute;
+    } */
+
+}
+

@@ -5,10 +5,17 @@
 	border-right: 25px solid transparent;
 	border-top: 50px solid #555;
 }
-.triangle-down-red {
+.triangle-down-orange {
 	width: 0;
 	height: 0;
 	border-left: 25px solid transparent;
 	border-right: 25px solid transparent;
 	border-top: 50px solid #ff8522;
+}
+.triangle-up-orange {
+	width: 0;
+	height: 0;
+	border-left: 45px solid transparent;
+	border-right: 45px solid transparent;
+	border-bottom: 250px solid #ff8522;
 }
