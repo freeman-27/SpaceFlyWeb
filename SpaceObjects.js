@@ -95,7 +95,18 @@ class SpaceObj{
     RandomCoordinates();
     Stars_Type1.DomElement.setAttribute("style", "position: absolute; left:"+ RandomX + "px; top: 100px; border: 0px solid red !important;")
 
-    document.getElementById("MiddleItemsGroup").appendChild(Stars_Type1.DomElement);
+    // document.getElementById("MiddleItemsGroup").appendChild(Stars_Type1.DomElement);
+    document.getElementById("BackgroundAnimatedItems").appendChild(Stars_Type1.DomElement);
 
     // newID++;
   }
+
+
+  // setInterval(function(){
+    // ClearAll();
+    function ClearAll(){
+    let ClearItemsFrom = document.getElementById("BackgroundAnimatedItems");
+    ClearItemsFrom.innerHTML = "<img>";
+    console.log('clear: remove all items');
+  }
+  // },20000);
