@@ -1,5 +1,7 @@
 let item1 = document.getElementById('RedLightContainer01');
 let item2 = document.getElementById('RedLightContainer02');
+let item3 = document.getElementById('RedLightContainer03');
+let item4 = document.getElementById('RedLightContainer04');
 // array RedLights:
 let RedLights = [];
 RedLights = {
@@ -11,6 +13,8 @@ RedLights = {
 function DisplayRedLights(){
     item1 = document.getElementById('RedLightContainer01').classList.toggle("d-none");
     item2 = document.getElementById('RedLightContainer02').classList.toggle("d-none");
+    item3 = document.getElementById('RedLightContainer03').classList.toggle("d-none");
+    item4 = document.getElementById('RedLightContainer04').classList.toggle("d-none");
     // var It1 = RedLights[0];
     // It1.classList.add(d-none);
     
@@ -22,6 +26,8 @@ function DisplayRedLights(){
     function DisableLights(){
         item1 = document.getElementById('RedLightContainer01').classList.toggle("d-none");
         item2 = document.getElementById('RedLightContainer02').classList.toggle("d-none");
+        item3 = document.getElementById('RedLightContainer03').classList.toggle("d-none");
+        item4 = document.getElementById('RedLightContainer04').classList.toggle("d-none");
     }, 8000)
 
     let TopInterface = document.getElementById("TopItemsGroup");
