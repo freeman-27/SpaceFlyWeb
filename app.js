@@ -11,23 +11,28 @@ function StopApp(){
     return AppStopped;
 }
 
-
-let CallInt = setInterval (function CallAddMeteor( ){AddMeteor(); AddStars();}, 1000);
+setTimeout(function(){
+setInterval (function CallAddMeteor( ){AddMeteor(); AddStars();}, 1000)}, 12000);
+// let CallInt = setInterval (function CallAddMeteor( ){AddMeteor(); AddStars();}, 1000);
 function StartApp(){
     if(AppStopped === false){
         OpenDoor();
+        ShowScore();
+        ShowBottomPannelWithButtons();
         // DisplayShipOnStart();
-        
         // CallAddMeteor();
+        setTimeout( function(){AddItemsToFixedPathContainer()}, 12000)
+
     }    
     if (AppStopped === true){
         clearInt();
         function clearInt(){
-            clearInterval(CallInt);
+            // clearInterval(CallInt);
         }
         CloseDoor();
         DisplayRedLights();
         AppStopped = false;
+        HideBottomPannelWithButtons();
     }return AppStopped;
 }
 

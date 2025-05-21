@@ -4,7 +4,7 @@ function ClearItemsOutOfLimits(){
     let RemoveItems2 = document.getElementById('Star_T1');
     RemoveItems1.remove();
     RemoveItems2.remove();
-}, 2000)
+}, 1350) //2000 default
 
 
 function ClearItemsOutOfLimits(){
