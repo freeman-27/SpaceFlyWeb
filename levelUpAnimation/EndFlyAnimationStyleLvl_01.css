@@ -1,0 +1,40 @@
+:root{
+    --loaderBG: url('/img/textures/TransparentStarAndStarsLayerDark.png');
+}
+.LoaderStyle{
+    /* background: var(--loaderBG); */
+    background: var(--loaderBG);
+    /* background-image: var(--loaderBG); */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.LoaderStyleBG{
+    /* background: var(--loaderBG); */
+    background: var(--loaderBG), linear-gradient(to top, red, yellow);
+    /* background-image: var(--loaderBG); */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.animateBG{
+    opacity: 1;
+    transition-duration: 5s;
+    background: var(--loaderBG), linear-gradient(to top, rgb(255, 255, 255), yellow) !important;
+    animation-name: incrGradient;
+    animation-duration: 5s;
+    /* timing-function delay */
+    /* animation-iteration-count: 1; */
+    /*direction fill-mode; */
+}
+
+@keyframes incrGradient {
+    /* 0% {background: var(--loaderBG), linear-gradient(to top, red, white) !important;}
+    50% {background: var(--loaderBG), linear-gradient(to top, red, yellow) !important;}
+    100% {background: var(--loaderBG), linear-gradient(to top, red, red) !important;} */
+    0% {opacity:0; background: var(--loaderBG), linear-gradient(to top, red, white) !important;}
+    100% {opacity:1; background: var(--loaderBG), linear-gradient(to top, red, red) !important;}
+    /* from {background: linear-gradient(to top, red, white) !important;}
+    to {background: linear-gradient(to top, red, red) !important;} */
+}
