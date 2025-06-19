@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="90"
+   height="300"
+   viewBox="0 0 90 300"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="Tail_90x300_Transparent.svg"
+   inkscape:export-filename="Triangle90x250_OrangeTransparent.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="1.8083333"
+     inkscape:cx="111.15207"
+     inkscape:cy="187.18894"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1352"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g3" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Слой 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:none"
+     sodipodi:insensitive="true">
+    <path
+       sodipodi:type="star"
+       style="fill:#fc4200;fill-opacity:0.5;stroke:none;stroke-width:40"
+       id="path1"
+       inkscape:flatsided="true"
+       sodipodi:sides="3"
+       sodipodi:cx="283.13364"
+       sodipodi:cy="143.77879"
+       sodipodi:r1="118.41851"
+       sodipodi:r2="59.209255"
+       sodipodi:arg1="0.52359878"
+       sodipodi:arg2="1.5707963"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 385.68707,202.98805 -205.10687,0 102.55344,-177.627767 z"
+       inkscape:transform-center-y="-41.666677"
+       transform="matrix(0.43879562,0,0,1.4074376,-79.2378,-35.693016)"
+       inkscape:transform-center-x="2.8112578e-06" />
+    <circle
+       style="fill:#fc4200;fill-opacity:0.5;stroke:none;stroke-width:40"
+       id="path2"
+       cx="45"
+       cy="255"
+       r="45" />
+  </g>
+  <g
+     inkscape:label="Копия Слой 1"
+     inkscape:groupmode="layer"
+     id="g3">
+    <path
+       id="path3"
+       style="fill:#fc4200;fill-opacity:0.5;stroke:none;stroke-width:40"
+       inkscape:transform-center-x="2.8112578e-06"
+       inkscape:transform-center-y="-41.666677"
+       d="M 283.13364 25.360283 L 180.5802 202.98805 L 181.39475 202.98805 A 102.55344 31.972998 0 0 0 180.5802 206.54061 A 102.55344 31.972998 0 0 0 283.13364 238.51361 A 102.55344 31.972998 0 0 0 385.68708 206.54061 A 102.55344 31.972998 0 0 0 385.02831 202.98805 L 385.68708 202.98805 L 283.13364 25.360283 z "
+       transform="matrix(0.43879562,0,0,1.4074376,-79.2378,-35.693016)" />
+  </g>
+</svg>
