@@ -1,11 +1,12 @@
-let SoundForBackgroundFlying = document.getElementById("SirenForBackground");
-document.getElementById("RingOpeningDoor").volume = 0.07;
-document.getElementById("SoundOfDoorOnSpaseShip").volume = 0.01;
-document.getElementById("SirenOpeningDoor").volume = 0.03;
-document.getElementById("SirenClosingDoor").volume = 0.0025;
-SoundForBackgroundFlying.volume = 0.005;
-document.getElementById('MainSoundBackground').volume = 1; //100%
-document.getElementById('ShipEngineSound').volume = 0.1; //100%
+///loudness:
+// let SoundForBackgroundFlying = document.getElementById("SirenForBackground");
+// document.getElementById("RingOpeningDoor").volume = 0.07;
+// document.getElementById("SoundOfDoorOnSpaseShip").volume = 0.01;
+// document.getElementById("SirenOpeningDoor").volume = 0.03;
+// document.getElementById("SirenClosingDoor").volume = 0.0025;
+// SoundForBackgroundFlying.volume = 0.005;
+// document.getElementById('MainSoundBackground').volume = 1; //100%
+// document.getElementById('ShipEngineSound').volume = 0.1; //100%
 
 // let SVGTextHeader1 = document.getElementById("GameStatusText").children[0];
 

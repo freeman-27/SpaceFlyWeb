@@ -6,6 +6,10 @@ let CurrentY;
 let RandomForX;
 let incrY;
 let StNumber = 1;
+
+
+// let PathNumber; /// value number of container with path
+
 let StoneItemContainer = document.createElement('div');
 let NewStoneItem = document.createElement('div');
 StoneItemContainer.setAttribute("id", "St_" + StNumber);
@@ -226,7 +230,8 @@ function AddItemsToFixedPathContainer(){
     StoneItemContainer.appendChild(NewStoneItem);
     StoneItemContainer.appendChild(TailTopLayer);
     FallingItemsContainerFixed.children[PathNumber].appendChild(StoneItemContainer);
-    document.getElementById('MeteorTailSound').volume = 0.1;
+    // document.getElementById('MeteorTailSound').volume = 0.1;
+    document.getElementById('MeteorTailSound').volume = CurrentValueOfSoundTail;
     document.getElementById('MeteorTailSound').play();
     // PathNumber++;
     // }
