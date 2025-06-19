@@ -1,4 +1,4 @@
-# SpaceFly online app
+# SpaceFly online app (prototype)
 
 ### Description: 
 prototype of 2d animation app game (desktop)
