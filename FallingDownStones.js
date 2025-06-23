@@ -8,7 +8,9 @@ let incrY;
 let StNumber = 1;
 
 
-// let PathNumber; /// value number of container with path
+// let SetNumber_PathOfStone; /// value number of container with path
+let SetNumber_PathOfStone
+var CurrentPathNumberOfStone;
 
 let StoneItemContainer = document.createElement('div');
 let NewStoneItem = document.createElement('div');
@@ -69,7 +71,7 @@ function IncrY_HeightForStonesItems(){
         incrY += 10;
     }, 1000);
     // RandomY = Math.floor(Math.random() * 200) + 1; //Y from 1 to 20
-    console.log("RandomHeightForStonesItems()", incrY); //check
+    // console.log("RandomHeightForStonesItems()", incrY); ///check
     return incrY;
 }
 
@@ -190,32 +192,33 @@ function AnimateFalling(){
 /// function AddItemsToFixedPathContainer()
 /// add FallingStones items with custom X and Y attribites
 ///
-// PathNumber = 1;
-// let CurrentItemPath = FallingItemsContainerFixed.children[PathNumber];
-let CurrentItemPath = FallingItemsContainerFixed.children[PathNumber];
+// SetNumber_PathOfStone = 1;
+// let CurrentItemPath = FallingItemsContainerFixed.children[SetNumber_PathOfStone];
+let CurrentItemPath = FallingItemsContainerFixed.children[SetNumber_PathOfStone];
 
 function AddItemsToFixedPathContainer(){
     setInterval( function(){
-    if (PathNumber > 13){
-        PathNumber = 1;
-    } 
+    // if (SetNumber_PathOfStone > 13){
+    //     SetNumber_PathOfStone = 1;
+    // } 
 
     function PathNumberGen(){
-        PathNumber = Math.floor(Math.random() * 13); 
+        // SetNumber_PathOfStone = Math.floor(Math.random() * 13); /// for stone placement (include paths L6 and R6)
+        SetNumber_PathOfStone = Math.floor(Math.random() * 11); /// for stone placement (without paths L6 and R6)
     }
-    // if (PathNumber < 13){
+    // if (SetNumber_PathOfStone < 13){
     PathNumberGen();
     RandomX_CoordinatesForStonesItems();
     // CurrentItemPath = FallingItemsContainerFixed.children[5];
-    CurrentItemPath = FallingItemsContainerFixed.children[PathNumber];
+    CurrentItemPath = FallingItemsContainerFixed.children[SetNumber_PathOfStone];
     NewStoneItem.setAttribute("class", "rounded-circle RotatedStones FallingStonesPreset Off-FallingStones");
     NewStoneItem.setAttribute("style", "position: relative !important; top:-50px; z-index: 222005;");
     NewStoneItem.setAttribute("id", "Stone_1");
     IncrY_HeightForStonesItems();
-    NewStoneItem.setAttribute("attr_X", PathNumber*100 + "px");
+    NewStoneItem.setAttribute("attr_X", SetNumber_PathOfStone*100 + "px");
     NewStoneItem.setAttribute("attr_Y", incrY + "px");
     // NewStoneItem.setAttribute("style", "left:"+ RandomForX + "px;");
-    // FallingItemsContainerFixed.children[PathNumber].appendChild(NewStoneItem);
+    // FallingItemsContainerFixed.children[SetNumber_PathOfStone].appendChild(NewStoneItem);
     // StoneItemContainer.innerHTML = '<div>'+ NewStoneItem +'<div class="" style="width: 75px; block-size: 60px; top: 5px; position: relative; z-index: 555005; -webkit-backdrop-filter: blur(5px) !important; backdrop-filter: blur(5px) !important;"><span class="d-none">0</span></div><div class="triangle-up-orange" style="z-index: 444005; top:-55px; position: relative;"></div></div>';
     StoneItemContainer.setAttribute("style", "border: 0px solid red; top:-500px; block-size: 300px;");
     StoneItemContainer.setAttribute("class", "FallingStones");
@@ -229,15 +232,21 @@ function AddItemsToFixedPathContainer(){
     StoneItemContainer.innerHTML = StoneAndTailOnPath;
     StoneItemContainer.appendChild(NewStoneItem);
     StoneItemContainer.appendChild(TailTopLayer);
-    FallingItemsContainerFixed.children[PathNumber].appendChild(StoneItemContainer);
+    FallingItemsContainerFixed.children[SetNumber_PathOfStone].appendChild(StoneItemContainer); /// selection: arr index EQ SetNumber_PathOfStone
+    var prefixID = '';
+    if (prefixID < 10){
+        prefixID = '0';
+    }
+    document.getElementById(prefixID + SetNumber_PathOfStone); /// selection: arr index EQ SetNumber_PathOfStone
     // document.getElementById('MeteorTailSound').volume = 0.1;
     document.getElementById('MeteorTailSound').volume = CurrentValueOfSoundTail;
     document.getElementById('MeteorTailSound').play();
-    // PathNumber++;
+    // SetNumber_PathOfStone++;
     // }
-    }, 3000)
-    
-    return PathNumber;
+    CurrentPathNumberOfStone = SetNumber_PathOfStone;
+    }, 3000) /// interval like from function IncrPositionOfStone()
+    console.log('CurrentPathNumberOfStone:' + CurrentPathNumberOfStone);
+    return SetNumber_PathOfStone, CurrentPathNumberOfStone;
 }
 
 

@@ -77,16 +77,21 @@ function CloseDoor(){
     document.getElementById("SirenOpeningDoor").play();
 
     document.getElementById('MainSoundBackground').pause();
-    SoundForBackgroundFlying.pause();}, 2000);
+    SoundForBackgroundFlying.pause();
+    }, 2000);
     
     // document.getElementById("topPart").classList.add("MoveTop");
 
     document.getElementById("GameStatusText").classList.remove("ScalableText", "ReColorText");
     document.getElementById("GameStatusText").innerText = "Game Over";
 
-     setInterval(function(){
+    setInterval(function(){
         document.getElementById("GameStatusText").innerText = "Press 'Enter' or 'S' to start game";
-     },10000)
+    },10000)
+
+    setTimeout( () => {
+        document.getElementById('StartAppButton').children[1].classList.add('StartAppButtonImgShining');}, 
+    15000);
 }
 
 

@@ -2,17 +2,21 @@
 let SoundForBackgroundFlying = document.getElementById("SirenForBackground");
 
 ///Default loudness:
+const LaserSound = document.getElementById('ShortLaserSound').volume = 0.1; /// sound of laser
+
+const SoundOfDamage = document.getElementById('ShipDamageSound').volume = 0.1; /// sound of collision
+
 const Sound_SirenForBackground = SoundForBackgroundFlying.volume = 0.005;
 const Sound_RingOpeningDoor = document.getElementById("RingOpeningDoor").volume = 0.07;
 const Sound_SoundOfDoorOnSpaseShip = document.getElementById("SoundOfDoorOnSpaseShip").volume = 0.01;
 const Sound_SirenOpeningDoor = document.getElementById("SirenOpeningDoor").volume = 0.03;
 const Sound_SirenClosingDoor = document.getElementById("SirenClosingDoor").volume = 0.0025;
 const Sound_MainSoundBackground = document.getElementById('MainSoundBackground').volume = 1; //100%
-const Sound_ShipEngineSound = document.getElementById('ShipEngineSound').volume = 0.1; //10%
+var Sound_ShipEngineSound = document.getElementById('ShipEngineSound').volume = 0.1; //10%
 const ZeroLoudness = 0;
 const FullLoudness = 1;
 const DefValueOfSoundTail = 0.025; /// Default value
-let CurrentValueOfSoundTail = DefValueOfSoundTail; /// Default value
+let CurrentValueOfSoundTail = DefValueOfSoundTail; /// Default value for Function fallingStones() and GameOver()
 ///Default loudness:
 SoundForBackgroundFlying.volume = 0.005;
 document.getElementById("RingOpeningDoor").volume = 0.07;
@@ -47,6 +51,8 @@ function MuteAllSounds(switchValue){
             document.getElementById('MainSoundBackground').volume = ZeroLoudness; //1; //100%
             document.getElementById('ShipEngineSound').volume = ZeroLoudness; //0.1; //10%
             CurrentValueOfSoundTail = ZeroLoudness;
+            document.getElementById('ShipDamageSound').volume = ZeroLoudness;
+            document.getElementById('ShortLaserSound').volume = ZeroLoudness;
             ///buttons switch:
             document.getElementById('MuteAllBtn').classList.add('d-none');
             document.getElementById('UnmuteAllBtn').classList.remove('d-none');
@@ -62,6 +68,8 @@ function MuteAllSounds(switchValue){
             document.getElementById('MainSoundBackground').volume = 1; //100%
             document.getElementById('ShipEngineSound').volume = 0.1; //10%
             CurrentValueOfSoundTail = DefValueOfSoundTail;
+            document.getElementById('ShipDamageSound').volume = 0.1;
+            document.getElementById('ShortLaserSound').volume = 0.1;
             ///buttons switch:
             document.getElementById('UnmuteAllBtn').classList.add('d-none');
             document.getElementById('MuteAllBtn').classList.remove('d-none');
