@@ -1,3 +1,23 @@
+/*** //////////////////// Game items animation: falling rotating meteors */
+.FallingRotatingStones{
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    /* animation-name: MovingDown; */
+    animation: RotatingStonesMovingDown;
+    animation-duration: 15s;  /*default: 15s */
+    position: absolute;
+    top:500px;
+    /* z-index: -2; */
+}
+
+@keyframes RotatingStonesMovingDown {
+      /* 0%{top: 100px;}
+     25%{top: 400px;}
+     50%{top: 700px;}
+    100%{top: 1000px;} */
+    from{top: -100px; transform: rotate(-720deg);}
+    to{top: 1000px; transform: rotate(360deg);}
+}
+
 .FallingStones{
     /* animation: name duration timing-function delay iteration-count direction fill-mode; */
     /* animation-name: MovingDown; */
@@ -16,28 +36,10 @@
     from{top: -100px; /*transform: rotate(-720deg)*/;}
     to{top: 1000px; /*transform: rotate(360deg)*/;}
 }
-.FallingRotatingStones{
-    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
-    /* animation-name: MovingDown; */
-    animation: RotatingStonesMovingDown;
-    animation-duration: 15s;
-    position: absolute;
-    top:500px;
-    /* z-index: -2; */
-}
-
-@keyframes RotatingStonesMovingDown {
-      /* 0%{top: 100px;}
-     25%{top: 400px;}
-     50%{top: 700px;}
-    100%{top: 1000px;} */
-    from{top: -100px; transform: rotate(-720deg);}
-    to{top: 1000px; transform: rotate(360deg);}
-}
 
 .RotatedStones{
     animation: RotatingStones;
-    animation-duration: 15s;
+    animation-duration: 15s;  /*default: 15s */
     position: absolute;
     top:500px;
 }
@@ -46,15 +48,56 @@
   to{transform: rotate(360deg);}
 }
 
+/*** //////////////////// Background items animation Stars and small stones*/
+/*Small Stones*/
+.FallingStonesSmall{
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    /* animation-name: MovingDown; */
+    animation-name: SmallStonesMovingDown;
+    animation-duration: 5s;  /*default: 3s */
+    position: absolute;
+    top: -200px; /*default - 100px*/
+    /* outline: 10px solid green !important; */
+    /* z-index: -2; */
+    /* transform: rotateX('angle'); */
+}
 
-/*Falling Stars //////////////////// */
+@keyframes SmallStonesMovingDown {
+      /* 0%{top: 100px;}
+     25%{top: 400px;}
+     50%{top: 700px;}
+    100%{top: 1000px;} */
+    from{top: -500px; /*default: -100px*/ /*transform: rotate(-720deg)*/;}
+    to{top: 1000px; /*default: 1000px*/ /*transform: rotate(360deg)*/;}
+}
+
+
+/*Falling Stars*/
 .FallingStars{
     /* animation: name duration timing-function delay iteration-count direction fill-mode; */
     /* animation-name: MovingDown; */
     animation: StarsMovingDown;
-    animation-duration: 15s;
+    animation-duration: 5s; /*default: 15s */
     position: absolute;
-    top:500px;
+    top: -200px;
+    /* z-index: -2; */
+}
+.FallingStars_B{
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    /* animation-name: MovingDown; */
+    animation: StarsMovingDown;
+    animation-duration: 30s; /*default: 15s */
+    position: absolute;
+    top: -200px;
+    /* z-index: -2; */
+}
+.FallingStars_H{
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    /* animation-name: MovingDown; */
+    animation: StarsMovingDown;
+    animation-duration: 30s; /*default: 15s */
+    position: absolute;
+    top: -200px;
     /* z-index: -2; */
 }
 
@@ -63,8 +106,8 @@
      25%{top: 400px;}
      50%{top: 700px;}
     100%{top: 1000px;} */
-    from{top: -100px; }
-    to{top: 1000px; }
+    from{top: -100px; } /*default: -100px*/
+    to{top: 1000px; } /*default: 1000px*/
 }
 
 .ShiningStars{
@@ -83,9 +126,11 @@
 
 .ShiningFallingStars{
     animation: ShiningAndFalling;
-    animation-duration: 30s;
-    animation-iteration-count:infinite;
+    animation-duration: 30s; /*default: 30s*/
+    animation-iteration-count: infinite;
     position: absolute;
+    /* top: 0px !important; */
+
 }
 @keyframes ShiningAndFalling {
     /* from{transform: scale(1.0);}

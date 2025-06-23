@@ -1,11 +1,15 @@
-
+:root{
+    --CustomCursor: url('img/StarType4.png');
+}
 body{
     /* background: url('endless-space-ii-wallpaper-2048x1152_49.jpg'); */
     /* background: url('img/SpaceBackgroundType1_opacity150.png'); */
     background-size: 25%; 
     /* background-repeat: no-repeat; */
-
-    background-color: rgba(2, 0, 66, 0.445);
+    
+    /* background-color: rgba(66, 0, 2, 0.445); */
+    /* background-color: rgba(2, 0, 66, 0.445); */
+    background-color: rgba(36, 36, 36, 0.801);
     background-image: url('img/BigTextureStars_opacity200.png');
 
     /* background-blend-mode: hard-light; */
@@ -225,11 +229,48 @@ button:hover, .HoverButton:hover{
     border-color: white !important;
 }
 
-
+/*main container-path style*/
 .VerticalLineBoxes {/****** for falling elements paths */
-    border: 0px dashed red;
-    block-size: 800px;
+    border: 1px dashed red;
+    block-size: 650px; /* Default: 800 */
     width: 100px !important;
     top: -200px !important;
     position: relative;
 }
+
+#BottomLinePanel button{
+    margin-right: 5px;
+}
+
+.StartAppButtonImgShining{
+    animation-name: ShiningLight;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+@keyframes ShiningLight {
+    0%{
+        box-shadow: none;
+    }
+    50%{
+        box-shadow: 0 0px 2px 4px rgb(255, 203, 30) , 0 0px 6px 8px rgb(255, 38, 30);
+    }
+    100%{
+        box-shadow: none;
+    }
+}
+
+
+#FallingItemsContainerFixed div{
+    /* cursor: cell; */
+    background-color: #00ffff10;
+}
+#BottomItemsGroup, #TopItemsGroup{
+    /* cursor: cell; */
+    /* cursor: -webkit-grab; */
+    /* cursor: not-allowed; */
+    /* cursor: var(--CustomCursor), auto; */
+    cursor: url('img/StarType4.png'), auto !important;
+    /* cursor: all-scroll; */
+}
+
+

@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="ScreenModes.css">
     <link rel="stylesheet" href="MainMobile.css">
     <link rel="stylesheet" href="InterfaceHovers.css">
+    <link rel="stylesheet" href="itemsAnimation.css">
 
 
     <link rel="shortcut icon" href="img/StarType5.ico" type="image/x-icon">
@@ -35,17 +36,18 @@
     </div>
 <main id="wrapper" class="d-none">
     <div class="text-center w-100 d-flex justify-content-center" style="position: absolute; z-index: 888005;"><h1 class="text-light">SpaceFly</h1> <img src="img/StarType5.svg" width="50px" alt="StarType5.svg"></div>
-    <div class="container-fluid d-flex justify-content-center align-items-center fixed-bottom py-3 text-center border-top" style="background: #2c2c2c; z-index: 666001;">
+    <div id="BottomLinePanel" class="container-fluid d-flex justify-content-center align-items-center fixed-bottom py-3 text-center border-top" style="background: #2c2c2c; z-index: 666001;">
         <div id="" class="bg-transparent text-light d-flex justify-content-end align-items-center w-50"><div id="RedLightContainer03" class="w-100 bg-transparent RedLightContainer" style="top: -165px; transform: scaleX(1);"><span id="LeftController" class="border border-1 bg-danger rounded-circle p-4">Lc</span> <div class="RedLightsAnimation" ><div class="d-flex flex-column justify-content-center align-items-center RedLightBox"><div class="BlurRedLight"></div><div class="bg-warning border border-1 border-light rounded-circle RedShadowDefault RedLamp" style="width: 25px; block-size: 25px; position: absolute; z-index: 777005;"></div><div class="RedLightStaticP1"></div><div class="RedLightStaticP2"></div></div></div></div>   </div>
         <div class="d-flex" style="z-index: 999005;">
-        <button id="StartAppButton" class="btn btn-warning border border-1 fw-bold p-0" onclick="StartApp()" style="width: 50px; background-color: #a3ff4d; padding: 0;"><span class="d-none">Open</span><img class="bg-success rounded-circle border border-black m-0 p-1" src="img/StartButtonText.svg" width="30px" height="30px" alt=""></button>
-        <button id="MuteAllBtn" class="btn btn-dark border" onclick="MuteAllSounds(0)">s</button>
-        <button id="UnmuteAllBtn" class="d-none btn btn-dark border" onclick="MuteAllSounds(1)">S</button>
-        <button id="MuteMusicBtn" class="btn btn-dark border" onclick="MuteAllSounds(2)">m</button>
-        <button id="UnmuteMusicBtn" class="d-none btn btn-dark border" onclick="MuteAllSounds(3)">M</button>
-        <button id="CloseAppButton" class="d-none btn btn-danger" onclick="StopApp()">Close</button><!--invisible before start -->
-        <button id="TestBTN" class="btn btn-secondary" onclick="">Test Lasers</button><!-- TO DO objects can be destroyed--> <!-- Stones coud not be destroyed-->
-        <button id="TestBTN" class="btn btn-secondary" onclick="">Level Up</button><!--TO DO level up after score over 10 000-->
+        <button id="StartAppButton" class="btn btn-warning border border-1 fw-bold" onclick="StartApp()" style="background-color: #a3ff4d;"><span class="d-none">Open</span><img class="bg-success rounded-circle border border-black m-0 p-1 StartAppButtonImgShining" src="img/StartButtonText.svg" width="30px" height="30px" alt="img/StartButtonText.svg"></button>
+        <button id="CloseAppButton" class="d-none btn btn-danger border border-1" onclick="StopApp()"><span class="d-none">Stop</span><div class="border border-0 border-black m-0 p-1" style="block-size: 30px; width: 30px;  background-color: transparent; background-image: url(img/stop_Image_2.png);  background-position: center; background-size: 30px, 30px;" alt="img/stop_Image"></div></button><!--invisible before start -->
+        
+        <button id="MuteAllBtn" class="btn btn-dark border" onclick="MuteAllSounds(0)"><span class="d-none">s_off</span><img class="bg-light rounded-circle border border-black m-0 p-1" src="img/sound_on.png" width="30px" height="30px" alt="img/sound_on.png"></button>
+        <button id="UnmuteAllBtn" class="d-none btn btn-dark border" onclick="MuteAllSounds(1)"><span class="d-none">S-on</span><img class="bg-light rounded-circle border border-black m-0 p-1" src="img/sound_off.png" width="30px" height="30px" alt="img/sound_off.png"></button>
+        <button id="MuteMusicBtn" class="btn btn-dark border" onclick="MuteAllSounds(2)"><span class="d-none">music_off</span><img class="bg-light rounded-circle border border-black m-0 p-1" src="img/music_on.svg" width="30px" height="30px" alt="img/music_on.svg"></button>
+        <button id="UnmuteMusicBtn" class="d-none btn btn-dark border" onclick="MuteAllSounds(3)"><span class="d-none">Music_on</span><img class="bg-light rounded-circle border border-black m-0 p-1" src="img/music_off.svg" width="30px" height="30px" alt="img/music_off.svg"></button>
+        <button id="TestBTN" class="btn btn-secondary" onclick="">TstLasers</button><!-- TO DO objects can be destroyed--> <!-- Stones coud not be destroyed-->
+        <button id="TestBTN" class="btn btn-secondary" onclick="">LevelUp</button><!--TO DO level up after score over 10 000-->
         <!-- <button id="TestBTN" class="btn btn-secondary" onclick="AddStonesItems()">Function</button> -->
         <!-- <button id="TestBTN" class="btn btn-secondary" onclick="AnimateFalling()">T_Function2</button> -->
         <!-- <button id="TestBTN" class="btn btn-secondary" onclick="AddItemsToFixedPathContainer()">T_F_3</button> -->
@@ -53,7 +55,7 @@
         <!-- <button id="TestBTN" class="btn btn-secondary" onclick="ClearAll();">T_F_5</button> -->
         <!-- <button id="TestBTN" class="btn btn-secondary" onclick=" ScanPlacement()">GetPath</button> -->
         <button id="TestBTN" class="btn btn-danger" onclick="ClearItemsOutOfLimits()">Remove</button>
-        <a id="ReloadBtn" class="btn btn-secondary HoverButton" onclick="" type="" href="/" ><span class="d-none">Reload</span><img class="bg-secondary rounded-circle" src="img/ReloadBtn.svg" width="25px" alt="ReloadBtn.svg"></a>
+        <a id="ReloadBtn" class="btn btn-dark border HoverButton" onclick="ForceReload()" type="" href="" ><span class="d-none">Reload</span><img class="bg-light rounded-circle border border-black m-0 p-1" src="img/ReloadBtn.svg"  width="30px" height="30px" alt="ReloadBtn.svg"></a>
         <button id="LeftController" class="border border-1 bg-danger rounded-circle" style="position: absolute; bottom: 150px; left: 15%; width: 55px; height: 55px;" type="button" onmousedown="CallMoveOnPress(37)" onmouseup="StopMoveOnUnpressed()"><span class="d-none">LeftController</span>&#x25C1;</button>
         <button id="RightController" class="border border-1 bg-danger rounded-circle" style="position: absolute; bottom: 150px; right: 15%; width: 55px; height: 55px;"type="button" onmousedown="CallMoveOnPress(39)" onmouseup="StopMoveOnUnpressed()"><span class="d-none">RightController</span>&#x25B7;</button>
         </div>
@@ -113,24 +115,29 @@
         <!-- <svg id="GameStatusText" class="border border-1" height="100" width="1020" xmlns="http://www.w3.org/2000/svg" style="z-index: 1555005; position: absolute; top: 150px; left: 450px; right:auto; text-align: center;"><text x="50" y="90" fill="#fff000" stroke="red" font-size="45" font-weight="bold">Press 'S' to start game</text></svg> -->
         
     </div>
-        <div id="TopItemsGroup" class="d-none d-flex justify-content-between border border-5 border-light rounded-4 text-center fs-3 text-light" style="flex-wrap: wrap; width: 70%; block-size: 100px; position: fixed; top: 100px; left:15%; z-index: 444001; border-style: dotted !important; background: #87c2563f;"><div class="d-none d-flex d-inline-flex w-100 justify-content-center align-items-center"><h2 id="" class="text-center text-warning">SpaceFly</h2><img class="justify-content-start" src="img/StarType5.svg" width="50px" alt="StarType5.svg"></div><span>Time: 0:00 &ensp; next item: <img width="25px" src="img/RockTexture1.PNG" alt=""></span><span id="PositionOutputFild" class="">Pos:</span>TopItem<span id="ScoreContainer">Score:</span></div>
-        <div id="MiddleItemsGroup" class="my-3 bg-transparent border border-5 border-light rounded-4 text-center fs-3 text-light" style="width: 70%; block-size: 450px; position: fixed; bottom: 250px; left:15%; z-index: 444001; border-style: dotted;">MainItem <div id="ShipItemContainer" PathNumber="" class="d-flex flex-column border border-0 w-100 text-center justify-content-center align-items-center ShipItemContainer_CL" style=" position: absolute; bottom: -100px; /*left: 37.5%;*/ border-style: dotted !important; z-index: 777005;" ><img id="ShipItemImg" src="img/SpaceShipPrototype_A2.png" width="" height="" style="width: 150px;" ><div class="" style="width: 75px; block-size: 60px; top: 5px; position: relative; z-index: 555005; -webkit-backdrop-filter: blur(5px) !important; backdrop-filter: blur(5px) !important;"><span class="d-none">0</span></div><div class="triangle-down-orange" style="z-index: 444005; top:-55px; position: relative;"></div></div><div id="FallingItemsContainer" class="border border-0 border-warning">stones</div> 
+        <div id="TopItemsGroup" class="d-none d-flex justify-content-between border border-5 border-light rounded-4 text-center fs-3 text-light" style="flex-wrap: wrap; width: 70%; block-size: 100px; position: fixed; top: 100px; left:15%; z-index: 444001; border-style: dotted !important; background: #87c2563f;"><div class="d-none d-flex d-inline-flex w-100 justify-content-center align-items-center"><h2 id="" class="text-center text-warning">SpaceFly</h2><img class="justify-content-start" src="img/StarType5.svg" width="50px" alt="StarType5.svg"></div><div class="d-none w-100 fs-5">TopItem</div><br><span>Play time: </span><div id="GameTimeMeterLabel">00:00:00</div><span id="LivesCounter">&ensp; Lives: 3</span><span>next item: <img width="25px" src="img/RockTexture1.PNG" alt=""></span><span id="PositionOutputFild" class="">Pos:</span><span id="ScoreContainer">Score:</span></div>
+        <div id="MiddleItemsGroup" class="my-3 bg-transparent border border-5 border-light rounded-4 text-center fs-3 text-light" style="width: 70%; block-size: 450px; position: fixed; bottom: 250px; left:15%; z-index: 444001; border-style: dotted;">MainItem 
+            <div id="ShipItemContainer" PathNumber="" class="d-flex flex-column border border-0 w-100 text-center justify-content-center align-items-center ShipItemContainer_CL" style=" position: absolute; bottom: -100px; /*left: 37.5%;*/ border-style: dotted !important; z-index: 777005;" ><img id="ShipItemImg" src="img/SpaceShipPrototype_A2.png" width="" height="" style="width: 150px;" ><div id="FireOfShipEngine" class="" style="width: 75px; block-size: 60px; top: 5px; position: relative; z-index: 555005; -webkit-backdrop-filter: blur(5px) !important; backdrop-filter: blur(5px) !important;"><span class="d-none">0</span></div><div class="triangle-down-orange" style="z-index: 444005; top:-55px; position: relative;"></div><div id="LaserOfShipItem"></div><div id="OnceLaserOfShipItem"></div></div>
+            <div id="FallingItemsContainer" class="border border-0 border-warning">stones</div> 
+            <div id="cursorRestyleContainer" class="CursorFly border" style="position: absolute; width: 25px; block-size: 25px; cursor: none; border: 1px dotted white !important;"><img class="" src="img/StarType5.svg" width="25px" alt="StarType5.svg"></div>
+            
             <div id="FallingItemsContainerFixed" class="d-flex d-inline-flex" style="flex-wrap: nowrap !important;">
                 <!-- <div id="Path_L6" path-number="" class="VerticalLineBoxes bg-primary d-none">1</div>   -->
-                <div id="Path_L5" path-number="" class="VerticalLineBoxes">1</div>  
-                <div id="Path_L4" path-number="" class="VerticalLineBoxes">1</div>  
-                <div id="Path_L3" path-number="" class="VerticalLineBoxes">1</div>
-                <div id="Path_L2" path-number="" class="VerticalLineBoxes">1</div>
-                <div id="Path_L1" path-number="" class="VerticalLineBoxes">1</div>
-                <div id="Path_00" path-number="" class="VerticalLineBoxes">0</div>
-                <div id="Path_R1" path-number="" class="VerticalLineBoxes">1</div>
-                <div id="Path_R2" path-number="" class="VerticalLineBoxes">1</div>
-                <div id="Path_R3" path-number="" class="VerticalLineBoxes">1</div>
-                <div id="Path_R4" path-number="" class="VerticalLineBoxes">1</div>
-                <div id="Path_R5" path-number="" class="VerticalLineBoxes">1</div>
+                <div id="01" line-id="Path_L5" path-number="" class="VerticalLineBoxes">L5</div>  
+                <div id="02" line-id="Path_L4" path-number="" class="VerticalLineBoxes">L4</div>  
+                <div id="03" line-id="Path_L3" path-number="" class="VerticalLineBoxes">L3</div>
+                <div id="04" line-id="Path_L2" path-number="" class="VerticalLineBoxes">L2</div>
+                <div id="05" line-id="Path_L1" path-number="" class="VerticalLineBoxes">L1</div>
+                <div id="06" line-id="Path_00" path-number="" class="VerticalLineBoxes">00</div>
+                <div id="07" line-id="Path_R1" path-number="" class="VerticalLineBoxes">R1</div>
+                <div id="08" line-id="Path_R2" path-number="" class="VerticalLineBoxes">R2</div>
+                <div id="09" line-id="Path_R3" path-number="" class="VerticalLineBoxes">R3</div>
+                <div id="10" line-id="Path_R4" path-number="" class="VerticalLineBoxes">R4</div>
+                <div id="11" line-id="Path_R5" path-number="" class="VerticalLineBoxes">R5</div>
                 <!-- <div id="Path_R6" path-number="" class="VerticalLineBoxes bg-primary d-none">1</div> -->
             </div>
             <div id="BackgroundAnimatedItems">1</div>
+            <div id="Slow_BackgroundAnimatedItems">2</div>
         </div>
         
         <div id="BottomItemsGroup" class="container-fluid d-flex flex-column justify-content-between bg-transparent border border-0 border-light rounded-4 text-center fs-5 text-light" style=" opacity: 1; block-size: 0px; position: fixed; bottom: 225px; z-index: 444001; border-style: dotted;"><span class="d-none">BottomItem</span>         
@@ -150,7 +157,7 @@
                         <!-- <button class="btn btn-primary" onclick="" onmousedown="MoveRight()" onmouseup="MoveToMiddle()">R</button> -->
                         <button class="btn border border-1 border-primary text-primary" onclick="" onmousedown="MoveRight()" onmouseup="MoveRight()">R</button>
                     </div>
-                    <button class="w-25 m-1 btn border border-1 border-primary text-primary GlassPanel" onclick="Laser()">R 1</button>
+                    <button class="w-25 m-1 btn border border-1 border-primary text-primary GlassPanel" onclick="Laser();" onmousedown="UseLasers(mouseBtn=LMouseDown);" onmouseup="UseLasers(mouseBtn=LMouseUp);">R 1</button>
                     <button class="w-100 m-1 btn border border-2 border-primary text-primary GlassPanel">Right panel</button>
                 </div>
             </div>
@@ -159,15 +166,18 @@
     <div id="BG-AnimationLvlUp" class="d-none container-fluid border border-2 border-primary bg-warning" style="overflow: hidden; /*width: 500px; */ block-size: 100%; position: absolute; z-index: 71111105 !important; bottom: 0;">111
         <button id="continueApp" class="btn btn-primary" onclick="window.alert('lvl number 2');" style="position: absolute; z-index: 755555505 !important; bottom: 0;">Continue play</button>
         
-        <iframe src="/levelUpAnimationTemplate/EndFlyAnimationPage_Template.html" frameborder="0" style="height: 90%; width: 100%;"></iframe>
+        <iframe src="/levelUpAnimation/EndFlyAnimationPage_Lvl_01.html" frameborder="0" style="height: 90%; width: 100%;"></iframe>
+        <!-- <iframe src="/levelUpAnimationTemplate/EndFlyAnimationPage_Template.html" frameborder="0" style="height: 90%; width: 100%;"></iframe> -->
         <!-- <iframe src="EndFlyAnimationPage.html" frameborder="0" style="height: 100%; width: 100%;"></iframe> -->
         <!-- <div class="bg-success" style="block-size: 100%; width: 100%; opacity: 0.5; "></div> -->
     </div>
+    <div id="Disabled-GameTimeMeterLabel" class="bg-black text-light fs-4" style="position: absolute; top: 1%; right: 1%; z-index: 19155555501;">00:00:00</div>
 
 </main>       
+
     <div id="SoundGroup" class="d-none">
         <audio id="SoundOfDoorOnSpaseShip" src="SoundOfDoorOnSpaseShip.mp3"></audio>
-        <audio id="AlarmOpeningDoor" src="mixkit-spaceship-alarm-998.wav"></audio>
+        <audio id="AlarmOpeningDoor" src=""></audio>
         <!-- <audio id="SirenOpeningDoor" src="audio/_Sound_Siren_E5E3_MixedFlanger25.mp3"></audio> -->
         <audio id="RingOpeningDoor" src="audio/C7RingHighSound.mp3"></audio>
         <audio id="SirenOpeningDoor" src="audio/_LowSoundSirenE5E3MixedFlanger39.mp3"></audio>
@@ -178,16 +188,23 @@
         <audio id="ShipEngineSound" loop src="audio/EngineSound.mp3"></audio>
         <audio id="MeteorTailSound" src="audio/MeteorTailSound.mp3"></audio>
         <audio id="ShortLaserSound" src="audio/ShortLaserSound.mp3"></audio>
+        <audio id="ShipDamageSound" src="audio/_DamageSound.mp3"></audio>
+        <audio id="LaserDamageSound_1" src="audio/_LaserDamageSound_1.mp3"></audio> <!--Not Used-->
+        <!-- <audio id="HealthSound" src="audio/_HealthSound.mp3"></audio> -->
+        <audio id="HealthSound" src="audio/_HelthBonus_F5-C5.wav"></audio>
+        <audio id="LongHealthSound" src="audio/_LongHealthSound.mp3"></audio>
     </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.js"></script>
     
+    <script src="CursorRestyle.js" type="text/javascript"></script>
 
     <!--Game functions -->
-    <script src="StartAnimation.js" type="text/javascript"></script>
-    <script src="MoveShip.js"></script>
+    <!--1--><script src="StartAnimation.js" type="text/javascript"></script>
+    <!--2--><script src="GameProcess.js"></script> <!--MOOVED -->
+    <!--3--><script src="MoveShip.js"></script>
     <script src="SpaceObjects.js"></script>
     <script src="DisplayShipOnStart.js"></script>
     <script src="DisplayAnimatedElements.js"></script>
@@ -200,9 +217,13 @@
     <script src="SensorFunction.js"></script>
     <!--Scores -->
     <script src="ScoresFunctions.js"></script>
-    <script src="GameProcess.js"></script>
+    <!--MOOVED <script src="GameProcess.js"></script> -->
     <!--Secondary functions TODO-->
     <script src="LaserFunctions.js"></script>
+    <!--Time Function-->
+    <!-- <script src="js/timemeter_js/ZeroTimeMeterFunc.js" type="text/javascript"></script> -->
+    <!--App Timemeter Function-->
+    <script src="js/timemeter_js/TimeMeterFunc.js" type="text/javascript"></script>
     <!--main app-->
     <script src="app.js" type="text/javascript"></script>
 

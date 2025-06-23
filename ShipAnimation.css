@@ -95,3 +95,40 @@
     box-shadow: 0 0px 4px 6px rgba(255, 0, 0, 0.4), 0 0px 12px 14px rgba(255, 255, 255, 0.4) !important;
     border: 1px solid rgb(255, 0, 0) !important;
   }
+
+
+  .DamageAnimation{
+    /* border-radius: 200%;
+    block-size: 100%; */
+    /* border: 2px solid red;
+    box-shadow: 0 0px 4px 6px rgba(255, 0, 0, 0.4), 0 0px 12px 14px rgba(255, 255, 255, 0.4) !important; */
+    
+    animation-name: DamageEffect;
+    animation-duration: 1s;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+
+  }
+
+@keyframes DamageEffect {
+    0% {
+        border-radius: 150%;
+        block-size: 100%;
+        /* outline-offset: 5px; */
+        outline: 2px solid rgba(255, 0, 0, 0);
+        box-shadow: none;
+    }
+    50%{
+        border-radius: 150%;
+        block-size: 100%;
+        /* outline-offset: 5px; */
+        outline: 2px solid red;
+        box-shadow: 0 0px 4px 6px rgba(255, 0, 0, 0.4), 0 0px 12px 14px rgba(255, 255, 255, 0.4);
+    }
+    100%{
+        border-radius: 150%;
+        block-size: 100%;
+        /* outline-offset: 5px; */
+        outline: 2px solid rgba(255, 0, 0, 0);
+        box-shadow: none;
+    }
+}
